@@ -1,4 +1,5 @@
->> Tyles: 
+4
+>> Types: 
     char(n).  Fixed length character 
     varchar(n).  Variable length with maximum length n.
     int.  Integer 
@@ -37,10 +38,10 @@
     from r
 
 >> Not remove duplicated values of A in r
-    select add A
+    select all A
     from r
 
->> select all attribute of r
+>> select all attributes of r
     select *   
     from r 
 
@@ -203,15 +204,15 @@
                 from instructor            
                 group by dept_name) as dept_avg (dept_name, avg_salary)     
         where avg_salary > 42000; 
-
+		
         # do not need to use the having clause 
 
     >> in the Select Clause: Subqueries in select clause most return a scalar 
         select dept_name,            
             (select count(*)                  
             from instructor                   
-            where department.dept_name = instructor.dept_name)                
-        as num_instructors  from department; 
+            where department.dept_name = instructor.dept_name) as num_instructors  
+		from department; 
 
 >> with clause: provides a way of defining a temporary relation
     with max_budget (value) as                
